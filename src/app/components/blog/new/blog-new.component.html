@@ -1,0 +1,12 @@
+  <h1>Nouveau post</h1>
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmitForm()">
+    <mat-form-field appearance="outline">
+      <mat-label>Titre</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Contenu</mat-label>
+      <textarea matInput formControlName="content"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="blogForm.invalid">Enregistrer</button>
+  </form>

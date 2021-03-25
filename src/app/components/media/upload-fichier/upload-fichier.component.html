@@ -1,0 +1,56 @@
+<h1>Importer des fichiers</h1>
+<div class="row">
+<!--  Images-->
+  <div class="mt-5 mb-5 col-6">
+    <mat-card>
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let file of files">
+            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+            <span id="file-label">{{file.data.name}}</span>
+          </li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="onClickImage()">
+          <mat-icon>file_upload</mat-icon>
+          importer des images
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
+  </div>
+
+<!--  CSV-->
+  <div class="mt-5 mb-5 col-6">
+    <mat-card>
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let file of filesCsv">
+            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+            <span id="csv-label">{{file.info.name}}</span>
+          </li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="onClickCsv()">
+          <mat-icon>file_upload</mat-icon>
+          importer des fichiers csv
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <input
+      type="file"
+      #fileCsvUpload
+      name="fileCsvUpload"
+      multiple="multiple"
+      accept=".csv"
+      style="display:none;" />
+  </div>
+</div>
+
+<!-- Read csv component -->
+<app-read-csv></app-read-csv>
+
+
+

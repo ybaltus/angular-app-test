@@ -1,0 +1,11 @@
+<li [ngClass]="{
+'list-group-item':true,
+'list-group-item-success': loveIts > 0,
+'list-group-item-danger': loveIts < 0
+}">
+  <h3 [ngStyle]="{color:setColor()}">{{ blogTitle }} <span [ngClass]="{'d-flex':true, 'flex-row-reverse': true}">{{ getCurrentDate() | date: 'd/m/y, h:mm a'}}</span></h3>
+  <p>{{ blogContent }}</p>
+  <button type="button" class="btn btn-success" (click)="onLove()">Love it!</button>
+  <button type="button" class="btn btn-warning ml-3" (click)="onUnLove()">Don't love it!</button>
+  <button type="button" class="btn btn-danger float-right" (click)="onRemove()">Supprimer</button>
+</li>

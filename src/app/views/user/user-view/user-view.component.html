@@ -1,0 +1,13 @@
+<h1>Les utilisateurs</h1>
+<ul [ngClass]="{'list-group':true}" *ngIf="users && users.length > 0; else elseBlock">
+  <app-user-list *ngFor="let user of users"
+                 [firstName]="user.firstName"
+                 [lastName]="user.lastName"
+                 [email]="user.email"
+                 [drinkPreference]="user.drinkPreference"
+                 [hobbies]="user.hobbies ? user.hobbies: []"
+  ></app-user-list>
+</ul>
+<ng-template #elseBlock><p>Il n'y a aucun utilisateur.</p></ng-template>
+<a mat-raised-button routerLink="new" color="primary">Ajouter un utilisateur</a>
+

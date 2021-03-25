@@ -1,0 +1,21 @@
+<h1 #h1Appareil></h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Nom de l'appareil</mat-label>
+    <ng-template [ngIf]="appareil" [ngIfElse]="createInput">
+      <input matInput name="name" #nameInput [(ngModel)]="appareil.name">
+    </ng-template>
+    <ng-template #createInput>
+      <input matInput name="name" #nameInput ngModel>
+    </ng-template>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>État de l'appareil</mat-label>
+    <mat-select #selectInput name="status" [ngModel]="defaultOnOff" >
+      <mat-option value="allumé">Allumé</mat-option>
+      <mat-option value="éteint">Éteint</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
+</form>
+

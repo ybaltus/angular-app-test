@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    <a mat-button routerLink="appareils" routerLinkActive="active"> Accueil</a>
+    <a mat-button routerLink="auth" routerLinkActive="active"> Authentification</a>
+    <a mat-button routerLink="appareils" routerLinkActive="active"> Appareils</a>
+    <a mat-button routerLink="appareils/edit" routerLinkActive="active"> Nouvel appareil</a>
+    <a mat-button routerLink="users" routerLinkActive="active"> Utilisateurs</a>
+    <a mat-button routerLink="/blog" routerLinkActive="active"> Blog</a>
+    <a mat-button routerLink="/blog/new" routerLinkActive="active"> Ajouter un post</a>
+    <a mat-button routerLink="/upload-file" routerLinkActive="active">
+      Gérer des fichiers
+    </a>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span>Vous êtes connecté depuis {{ secondes }} secondes !</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container mat-app-background">
+<!--  <div class="row">-->
+<!--<mat-sidenav-container>-->
+  <router-outlet></router-outlet>
+<!--</mat-sidenav-container>-->
+<!--  </div>-->
+</div>
+

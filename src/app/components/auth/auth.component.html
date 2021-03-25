@@ -1,0 +1,10 @@
+<h1>Authentification</h1>
+<!--<button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">Se connecter</button>-->
+<button mat-raised-button color="primary" *ngIf="!authStatus" (click)="onSignIn()">Se connecter</button>
+<!--<button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>-->
+<button mat-raised-button color="warn" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>
+
+<div #divSpinner hidden>
+  <mat-spinner id="authSpinner" ></mat-spinner>
+</div>
+

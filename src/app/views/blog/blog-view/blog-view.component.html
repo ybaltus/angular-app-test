@@ -1,0 +1,5 @@
+<h1>Les posts</h1>
+<ul [ngClass]="{'list-group':true}">
+  <app-blog *ngFor="let post of posts" [id]="post.getId()" [blogTitle]="post.title" [blogContent]="post.content"></app-blog>
+</ul>
+

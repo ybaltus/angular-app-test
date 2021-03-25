@@ -1,0 +1,36 @@
+<h1>Ajouter un nouvel utilisateur</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+<!--  <div class="form-group">-->
+<!--    <label for="firstName">Prénom</label>-->
+<!--    <input type="text" id="firstName" class="form-control" formControlName="firstName">-->
+<!--  </div>-->
+  <mat-form-field appearance="outline">
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="firstName">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="lastName">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Adresse e-mail</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Quelle boisson préférez-vous ?</mat-label>
+    <mat-select matInput formControlName="drinkPreference">
+      <mat-option value="jus d\'orange">Jus d'orange</mat-option>
+      <mat-option value="jus de mangue">Jus de mangue</mat-option>
+    </mat-select>
+  </mat-form-field>
+    <div formArrayName="hobbies">
+      <h3>Vos hobbies</h3>
+        <div *ngFor="let hobbyControl of getHobbies().controls; let i = index">
+          <mat-form-field appearance="outline">
+            <input matInput [formControlName]="i">
+          </mat-form-field>
+        </div>
+      <button mat-raised-button type="button" color="accent" (click)="onAddHobby()">"Ajouter un hobby</button>
+    </div>
+  <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Enregistrer</button>
+</form>
