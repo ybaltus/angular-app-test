@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UploadFichierComponent } from './upload-fichier.component';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('UploadFichierComponent', () => {
   let component: UploadFichierComponent;
@@ -8,7 +10,14 @@ describe('UploadFichierComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UploadFichierComponent ]
+      declarations: [ UploadFichierComponent ],
+      imports: [
+        HttpClientTestingModule
+      ],
+      providers: [
+        HttpClient,
+        HttpHandler
+      ]
     })
     .compileComponents();
   });

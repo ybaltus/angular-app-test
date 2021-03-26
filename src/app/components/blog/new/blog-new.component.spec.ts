@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlogNewComponent } from './blog-new.component';
+import {BlogService} from '../../../services/blog.service';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {FormBuilder} from '@angular/forms';
+import {Router, ROUTES} from '@angular/router';
+import {RouterTestingModule} from '@angular/router/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('BlogNewComponent', () => {
   let component: BlogNewComponent;
@@ -8,7 +14,15 @@ describe('BlogNewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BlogNewComponent ]
+      declarations: [ BlogNewComponent ],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
+      providers: [
+        BlogService,
+        FormBuilder
+      ]
     })
     .compileComponents();
   });

@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReadCsvComponent } from './read-csv.component';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('ReadCsvComponent', () => {
   let component: ReadCsvComponent;
@@ -8,7 +10,13 @@ describe('ReadCsvComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReadCsvComponent ]
+      declarations: [ ReadCsvComponent ],
+      imports: [
+        HttpClientTestingModule
+      ],
+      providers: [
+        ReadCsvComponent
+      ]
     })
     .compileComponents();
   });

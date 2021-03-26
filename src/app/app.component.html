@@ -12,7 +12,7 @@
       Gérer des fichiers
     </a>
   </mat-toolbar-row>
-  <mat-toolbar-row>
+  <mat-toolbar-row *ngIf="authStatus">
     <span>Vous êtes connecté depuis {{ secondes }} secondes !</span>
   </mat-toolbar-row>
 </mat-toolbar>

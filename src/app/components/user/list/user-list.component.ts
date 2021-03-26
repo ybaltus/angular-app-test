@@ -13,7 +13,7 @@ export class UserListComponent implements OnInit {
   @Input() drinkPreference: string;
   @Input() hobbies: any[];
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

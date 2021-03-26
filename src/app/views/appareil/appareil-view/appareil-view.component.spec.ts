@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppareilViewComponent } from './appareil-view.component';
+import {AppareilService} from '../../../services/appareil.service';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AppareilViewComponent', () => {
   let component: AppareilViewComponent;
@@ -8,7 +11,13 @@ describe('AppareilViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppareilViewComponent ]
+      declarations: [ AppareilViewComponent ],
+      imports: [
+        HttpClientTestingModule
+      ],
+      providers: [
+        AppareilService
+      ]
     })
     .compileComponents();
   });
